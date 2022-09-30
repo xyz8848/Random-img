@@ -13,7 +13,7 @@ $model = $_GET['model'] ?? "local";
 if ($model !== "local" && $model !== "link") {
     exit(json_encode([
         "code" => 100,
-        "msg" => "Invalid model data."
+        "msg" => "Invalid model data. For more information see http://docs.xyz8848.com/API/Random-img/#model"
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }
 
@@ -32,7 +32,7 @@ switch ($model) {
             if (!is_dir($pathDir . $library)) {
                 exit(json_encode([
                     "code" => 100,
-                    "msg" => "Invalid library data. For more information see http://docs.xyz8848.com/api/randomImg#library "
+                    "msg" => "Invalid library data. For more information see http://docs.xyz8848.com/API/Random-img/#library "
                 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             }
             $pathDir = $pathDir . "/" . $library;
@@ -43,7 +43,7 @@ switch ($model) {
             if ($type !== "pc" && $type !== "pe" && $type !== "all") {
                 exit(json_encode([
                     "code" => 100,
-                    "msg" => "Invalid type data. For more information see http://docs.xyz8848.com/api/randomImg#type "
+                    "msg" => "Invalid type data. For more information see http://docs.xyz8848.com/API/Random-img/#type "
                 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             }
         }
